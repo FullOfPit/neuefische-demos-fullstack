@@ -12,6 +12,7 @@ export default function MainMarker(
         setPosition: (newPosition: LatLngTuple) => void
     }) {
 
+
     return (
         <>
             <Marker
@@ -25,8 +26,8 @@ export default function MainMarker(
                 }}
             >
                 <Popup>
-                    Lat: {position[0]}
-                    Lang: {position[1]}
+                    <p>Lat: {position[0].toFixed(4)}</p>
+                    <p>Lng: {position[1].toFixed(4)}</p>
                 </Popup>
             </Marker>
         </>
