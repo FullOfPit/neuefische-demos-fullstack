@@ -18,6 +18,7 @@ export default function MapDemo() {
                 center={mapCenterPosition} zoom={13}
                 scrollWheelZoom={true}
                 style={{width: 750, height: 750}}
+                doubleClickZoom={false}
             >
 
                 <TileLayer
@@ -25,10 +26,13 @@ export default function MapDemo() {
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
 
-                    {
-                        //<MainMarker position={mainMarkerPosition} setPosition={setMainMarkerPosition}/>
-                    }
+                {
+                    <MainMarker position={mainMarkerPosition} setPosition={setMainMarkerPosition}/>
+                }
+                {
                     <MapHook/>
+                }
+
 
             </MapContainer>
         </div>
