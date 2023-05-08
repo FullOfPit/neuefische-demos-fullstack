@@ -3,14 +3,13 @@ import {MapContainer, TileLayer} from 'react-leaflet'
 import {LatLngTuple} from "leaflet";
 import MainMarker from "./MainMarker";
 import MapHook from "./MapHook";
+import LocationSearchBar from "./LocationSearchBar";
 
 export default function MapDemo() {
 
     const [mapCenterPosition, setMapCenterPosition] = useState<LatLngTuple>([51.015, 7.54]);
 
     const [mainMarkerPosition, setMainMarkerPosition] = useState<LatLngTuple>(mapCenterPosition);
-
-
 
     return (
         <div>
@@ -34,7 +33,12 @@ export default function MapDemo() {
                 }
 
 
+
+
             </MapContainer>
+            {
+                <LocationSearchBar/>
+            }
         </div>
     )
 }
