@@ -32,12 +32,9 @@ export default function MapDemo() {
                     <MapHook/>
                 }
 
-
-
-
             </MapContainer>
             {
-                <LocationSearchBar/>
+                //<LocationSearchBar/>
             }
         </div>
     )
