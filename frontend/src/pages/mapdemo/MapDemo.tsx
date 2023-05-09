@@ -3,7 +3,7 @@ import {MapContainer, TileLayer} from 'react-leaflet'
 import {LatLngTuple} from "leaflet";
 import MainMarker from "./MainMarker";
 import MapHook from "./MapHook";
-import LocationSearchBar from "./LocationSearchBar";
+import Routing from "./Routing";
 
 export default function MapDemo() {
 
@@ -30,6 +30,9 @@ export default function MapDemo() {
                 }
                 {
                     <MapHook/>
+                }
+                {
+                    <Routing/>
                 }
 
             </MapContainer>

@@ -15,7 +15,8 @@ export default function MapHook() {
         <>
             <Marker position={position} draggable={true}>
                 <Popup>
-                    A pretty CSS3 popup. <br /> Easily customizable.
+                    <p>Lat: {position.lat.toFixed(4)}</p>
+                    <p>Lng: {position.lng.toFixed(4)}</p>
                 </Popup>
             </Marker>
         </>
