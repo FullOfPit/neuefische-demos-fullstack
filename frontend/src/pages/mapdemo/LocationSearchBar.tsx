@@ -7,13 +7,20 @@ export default function LocationSearchBar() {
     const [searchString, setSearchString] = useState<string>("");
     const [searchResults, setSearchResults] = useState<OpenStreetMapLocation[]>([])
 
-    const baseUrl: string = "https://nominatim.openstreetmap.org/";
+    const baseUrl: string = "https://nominatim.openstreetmap.org/search";
 
-    const useSearchRequest = (event: React.FormEvent<HTMLFormElement>) => {
+    const onSearchRequest = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
             (async () => {
                 try {
-                    const nominatimResponse = await axios.get(`${baseUrl}search?q=${searchString}&format=json&addressdetails=1`);
+                    const nominatimResponse = await axios.get(`${baseUrl}`, {
+                        params: {
+                            q: searchString,
+                            "accept-language": "de-de",
+                            format: "jsonv2",
+                            addressdetails: 1
+                        }
+                    });
                     console.log(nominatimResponse.data);
                     setSearchResults(nominatimResponse.data);
                 } catch (error) {
@@ -24,7 +31,7 @@ export default function LocationSearchBar() {
 
     return(
         <>
-            <form onSubmit={useSearchRequest}>
+            <form onSubmit={onSearchRequest}>
                 <input type={"text"} value={searchString} onChange={(event) => setSearchString(event.target.value)}/>
                 <button type={"submit"}>GO!</button>
             </form>
