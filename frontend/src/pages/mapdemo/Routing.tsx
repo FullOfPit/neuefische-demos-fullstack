@@ -6,7 +6,7 @@ export default function Routing() {
 
     const waypoints: L.LatLng[] = [new LatLng(51.015, 7.54), new LatLng(50.9891, 7.5165)];
 
-    const RoutingMachine = createControlComponent(() => L.Routing.control({
+    const RoutingMachine = createControlComponent(() => new L.Routing.Control({
         waypoints: waypoints,
         lineOptions: {
             styles: [{color: "#DB745A", weight: 4}],
@@ -18,8 +18,8 @@ export default function Routing() {
             extendToWaypoints: false,
             missingRouteTolerance: 0
         },
-        showAlternatives: true, //displays alternative route on map
-        collapsible: true,  //allows route description to be collapsed
+        showAlternatives: true,
+        collapsible: true, //allows route description to be collapsed
     }))
 
     return (

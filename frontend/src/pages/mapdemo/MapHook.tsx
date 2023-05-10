@@ -6,7 +6,7 @@ export default function MapHook() {
 
     const [position, setPosition] = useState<LatLng>(new LatLng(51.505, -0.09));
 
-    const map = useMapEvent("dblclick", (event) => {
+    useMapEvent("dblclick", (event) => {
         const newPosition = event.latlng;
         setPosition(newPosition);
     });

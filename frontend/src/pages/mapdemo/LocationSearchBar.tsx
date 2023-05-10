@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {OpenStreetMapLocation} from "./types/OpenStreetMapLocation";
 import axios from "axios";
 
