@@ -36,7 +36,7 @@ export default function LocationSearchBar() {
                 <button type={"submit"}>GO!</button>
             </form>
             {searchResults.length > 0 &&
-                searchResults.map(location => <p key={location.osm_id}>{location.display_name}</p>)
+                searchResults.map(location => <p key={location.place_id}>{location.display_name}</p>)
             }
         </>
     )
